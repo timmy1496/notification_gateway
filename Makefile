@@ -1,4 +1,4 @@
-init: docker-down docker-pull docker-build docker-up
+init: docker-down docker-pull docker-build docker-up api-composer-install
 down: docker-down
 
 docker-up:
@@ -12,3 +12,6 @@ docker-pull:
 
 docker-build:
 	docker-compose build
+
+api-composer-install:
+	docker-compose run --rm api-php-fpm composer install
